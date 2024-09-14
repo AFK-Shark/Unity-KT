@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class InputListener : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializedField] private Player player;
+    private PlayerInvoker playerInvoker;
+
+    private void Awake()
     {
-        
+        playerInvoker = new(player);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        ReadJump();
     }
+
+    private void ReadJump()
+        if (Input GetKeyDown(KeyCode.Space))
+        {
+            //
+        }
 }

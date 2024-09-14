@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [field: SerializeField] public float JumpForce { }
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float movementSpeed;
 
-    // Update is called once per frame
-    void Update()
+    public Rigidbode Rb { get; private set; }
+
+    private void Awake()
     {
-        
+        Rb = GetComponent<Rigitbody>();
+        //
     }
 }
