@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Playerinvoker : MonoBehaviour
+public class PlayerInvoker : MonoBehaviour
 {
     private PlayerMovement playerMovement;
     private Player player;
 
-    public Playerinvoker(Player player)
+    public PlayerInvoker(Player player)
     {
-        playerMovement = new();
+        playerMovement = new PlayerMovement();
         this.player = player;
     }
 
-    void InvokeJump()
+    public void InvokeJump()
     {
-        playerMovement.Jump(player.JumpForce, player.Rb);
+        playerMovement.Jump(player.jumpForce, player.Rb);
+    }
+
+    public void InvokeMove(float horizontalInput, float verticalInput)
+    {
+        playerMovement.Move(horizontalInput, verticalInput, player.movementSpeed, player.Rb);
     }
 }

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [field: SerializeField] public float JumpForce { }
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private float movementSpeed;
+    [SerializeField] public float jumpForce = 10f;
+    [SerializeField] public float rotationSpeed = 5f;
+    [SerializeField] public float movementSpeed = 5f;
 
-    public Rigidbode Rb { get; private set; }
+    public Rigidbody Rb { get; private set; }
 
     private void Awake()
     {
-        Rb = GetComponent<Rigitbody>();
-        //
+        Rb = GetComponent<Rigidbody>();
     }
 }
